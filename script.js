@@ -17,6 +17,7 @@ let phoneInput = document.getElementById("phone");
 let serviceInput = document.getElementById("service");
 let addressInput = document.getElementById("address");
 let dateInput = document.getElementById("date");
+let bookingMessage = document.getElementById("bookingMessage");
 
 bookingForm.addEventListener("submit" ,function (e) {
     e.preventDefault();
@@ -25,9 +26,11 @@ bookingForm.addEventListener("submit" ,function (e) {
     let service = serviceInput.value.trim();
     let address = addressInput.value.trim();
     let date = dateInput.value;
-    if (name === "" || phone === "" || service === "" || address === "" || date === "") {
-        alert("Please fill in all required feilds!")
-        return;
+   if (name === "" || phone === "" || service === "" || address === "" || date === "") {
+    bookingMessage.innerHTML = "Please fill in all required fields!";
+    bookingMessage.style.color = "red";
+    return;
+    
     }
     let bookingId = "QF-" + Date.now();
 
@@ -45,7 +48,8 @@ bookingForm.addEventListener("submit" ,function (e) {
     bookings.push(booking);
     localStorage.setItem("bookings", JSON.stringify(bookings));
 
-    alert("Your booking has been submitted successfully!\nYour Booking ID: " + bookingId);
+    bookingMessage.innerHTML = `Your booking has been submitted successfully! Your Booking ID: <strong>${bookingId}</strong>`;
+    bookingMessage.style.color = "green";
     bookingForm.reset();
 });
 
@@ -111,24 +115,28 @@ let contactName = document.getElementById("contactName");
 let contactEmail = document.getElementById("contactEmail");
 let contactSubject = document.getElementById("contactSubject");
 let contactMessage = document.getElementById("contactMessage");
+let contactStatus = document.getElementById("contactStatus");
 
-contactForm.addEventListener("submit" ,function (e) {
+
+contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     let name = contactName.value.trim();
     let email = contactEmail.value.trim();
     let subject = contactSubject.value.trim();
     let message = contactMessage.value.trim();
-
     if (name === "" || email === "" || subject === "" || message === "") {
-        alert("Please fill in all fields!");
+        contactStatus.innerHTML = "Please fill in all fields!";
+        contactStatus.style.color = "red";
         return;
     }
     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address!");
-    return;
-}
-    alert("Thank you! Your message has been sent successfully.");
+        contactStatus.innerHTML = "Please enter a valid email address!";
+        contactStatus.style.color = "red";
+        return;
+    }
+    contactStatus.innerHTML = "Thank you! Your message has been sent successfully.";
+    contactStatus.style.color = "green";
     contactForm.reset();
 });

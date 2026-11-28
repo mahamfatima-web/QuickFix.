@@ -19,7 +19,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="#booking" class="navbtn">Book Now</a>
-        <button class="menu-btn" id="menuBtn">
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">
         <i class="fa-solid fa-bars"></i>
         </button>
     </nav>
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="page1-image">
-            <img src="images/plumber.jpeg" alt="img">
+            <img src="images/image1.jpeg" alt="img" fetchpriority="high" loading="eager">
         </div>
     </section>
     <section class="services" id="services">
@@ -72,7 +72,7 @@
             <p>Keep your home fresh, clean and comfortable.</p>
         </div>
         <div class="service-card">
-            <img src="images/paint.jpeg" alt="Wall Paint">
+            <img src="images/house paint.jpeg" alt="Wall Paint">
             <h3>Painting</h3>
             <p>Give your home a fresh look with quality painting.</p>
         </div>
@@ -91,8 +91,8 @@
                     <input type="text" id="name" placeholder="Enter your Full Name">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Full Name</label>
-                    <input type="tel" id="phone" placeholder="Enter your Phone Number">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="03xxxxxxxxx">
                 </div>
                 <div class="form-group">
                     <label for="service">Select Service</label>
@@ -119,6 +119,7 @@
                 </div>
                 <button type="submit" class="booking-btn">Book A Service</button>
             </form>
+            <p id="bookingMessage"></p>
         </div>
     </section>
     <section class="tracking" id="track">
@@ -148,6 +149,7 @@
         </div>
         <div class="admin-container">
             <input type="text" id="adminBookingId" placeholder="Enter Booking ID">
+            <label for="newStatus">Select Booking Status</label>
             <select id="newStatus">
             <option value="">Select New Status</option>
             <option value="Pending">Pending</option>
@@ -234,6 +236,7 @@
                         Send Message <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </form>
+                <p id="contactStatus"></p>
             </div>
         </div>
     </section>
@@ -268,10 +271,10 @@
         <div class="footer-social">
             <h3>Follow Us</h3>
             <div class="social-icons">
-                <a href="#https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#https://pk.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#https://www.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#https://www.facebook.com/" target="_blank" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#https://www.instagram.com/" target="_blank" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#https://pk.linkedin.com/" target="_blank" aria-label="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#https://www.whatsapp.com/" target="_blank" aria-label="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
         </div>  
